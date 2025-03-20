@@ -1,0 +1,19 @@
+name: euterplayground
+version: 0
+author: Arianna Masciolini, Claudio Pannacci and Clarissa Poleri Alunno
+maintainer: uzkamascio@gmail.com
+category: Misc
+build-type: Simple
+extra-source-files: README.md
+cabal-version: >= 1.10
+
+library
+    exposed-modules: 
+        Bach,
+        GoodKingWenceslas
+    other-modules: 
+        Eutermea
+    default-language: Haskell2010
+    build-depends:
+        base,
+        Euterpea

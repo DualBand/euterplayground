@@ -1,7 +1,6 @@
 module Eutermea where
 
 import Euterpea
-import Control.DeepSeq
 
 -- | Plays music on systems where the default port is != 0
 -- (port number is installation specific)

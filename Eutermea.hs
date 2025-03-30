@@ -2,10 +2,13 @@ module Eutermea where
 
 import Euterpea
 
--- | Plays music on systems where the default port is != 0
--- (port number is installation specific)
-play :: Music Pitch -> IO ()
-play = playDev 2
+-- | Plays music on (Manjaro) Linux, where the default port is 2, apparently
+manjaroPlay :: Music Pitch -> IO ()
+manjaroPlay = playDev 2
+
+-- | Plays music on Windows, where the default port is 0
+winPlay :: Music Pitch -> IO ()
+winPlay = play
 
 fromList :: [Music Pitch] -> Music Pitch
 fromList = foldl (:+:) (rest 0)

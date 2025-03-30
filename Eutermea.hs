@@ -10,6 +10,7 @@ manjaroPlay = playDev 2
 winPlay :: Music Pitch -> IO ()
 winPlay = play
 
+-- | Convert a list of "notes" into a monodic pitch
 fromList :: [Music Pitch] -> Music Pitch
 fromList = foldl (:+:) (rest 0)
 
@@ -17,5 +18,7 @@ fromList = foldl (:+:) (rest 0)
 canon :: Dur -> Music Pitch -> Music Pitch
 canon offset tune = tune :=: (rest offset :+: tune)
 
+-- | Given the duration of a rest and tune, it returns an inverse canon of 
+--  that tune
 inverseCanon :: Dur -> Music Pitch -> Music Pitch
 inverseCanon offset tune = tune :=: (rest offset :+: invert tune)
